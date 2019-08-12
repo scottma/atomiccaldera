@@ -121,7 +121,8 @@ class AtomicCaldera:
 												command = command.strip('\'')
 											elif command[0] == '\"':
 												command = command.strip('\"')
-											command = command.replace('\n',';\n').strip()
+											if executor == 'powershell':
+												command = command.replace('\n',';\n')
 										else:
 											command = ''
 											executor = ''
