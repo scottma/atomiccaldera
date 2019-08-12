@@ -237,7 +237,6 @@ def main(inputDir, ouptutDir, csvPath, varCsvPath, ctiPath):
 								command = command.strip('\'')
 							elif command[0] == '\"':
 								command = command.strip('\"')
-							command = command.replace('\n',';\n').strip()
 							# Initialize a new list to collect varialbe/argument values
 							varList = []
 							# If input arguments exist, replace them by looping through each
@@ -268,6 +267,7 @@ def main(inputDir, ouptutDir, csvPath, varCsvPath, ctiPath):
 								command = str(reCmd)
 							else:
 								command = command.replace('\\n','\n')
+                                                                command = command.replace('\n',';\n')
 							executor = 'psh'
 						else:
 							continue
